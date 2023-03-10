@@ -53,7 +53,7 @@ font-size: 60px;
 font-weight: 400;
 letter-spacing: 35px;
 animation-name: moveInleft;
-animation-duration: 5s;
+animation-duration: 3s;
 animation-timing-function: ease-out;
 }
 .heading-primary-sub{
@@ -61,7 +61,7 @@ display: block;
 font-size: 20px;
 font-weight: 700;
 letter-spacing: 17.4px;
-animation: moveInright 5s ease-in;
+animation: moveInright 3s ease-in;
 }
 @keyframes moveInleft{
     0% {
@@ -91,6 +91,18 @@ animation: moveInright 5s ease-in;
         transform: translateX(0);
     }
 }
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .btn:link,
 .btn:visited{
 text-transform: uppercase;
@@ -99,6 +111,7 @@ padding:15px 40px ;
 display: inline-block;
 border-radius: 100px;
 transition: all .2s;
+position: relative;
 }
 .btn:hover{
     transform: translateY(-3px);
@@ -111,4 +124,27 @@ transition: all .2s;
 .btn-white{
     background-color: #fff;
     color: #777;
+}
+.btn::after{
+    content:"" ;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn-white::after{
+    background-color: #fff;
+}
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-animated{
+animation: moveInBottom 3s ease-out 0.75s;
+animation-fill-mode: backwards;
 }
