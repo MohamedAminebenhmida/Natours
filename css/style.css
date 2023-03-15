@@ -208,7 +208,8 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
   padding: 3px;
-  transition: all .2s; }
+  transition: all .2s;
+  border-radius: 0; }
 
 .button-text:hover {
   background-color: #55c57a;
@@ -400,7 +401,7 @@ body {
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
-  .story:hover .story__img {
+  .story:hover .story__image {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(80%); }
 
